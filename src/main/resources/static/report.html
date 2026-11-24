@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Report a Bug - BugTracker</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+  <div class="main">
+    <header class="topbar" id="topbar"></header>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <h2>Report a Bug</h2>
+          <p>Describe the problem clearly so a developer can reproduce and fix it.</p>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-xl-8">
+          <form class="card-soft card-body-pad" id="bug-form" novalidate>
+            <div class="alert alert-danger d-none py-2" id="form-error" role="alert"></div>
+
+            <div class="mb-3">
+              <label class="form-label" for="title">Title <span class="text-danger">*</span></label>
+              <input class="form-control" id="title" maxlength="200" placeholder="Short summary, e.g. Login button does nothing on Safari">
+              <div class="form-text"><span id="title-count">0</span>/200 characters</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="description">Description <span class="text-danger">*</span></label>
+              <textarea class="form-control" id="description" rows="8" maxlength="4000"
+                        placeholder="What happened? What did you expect? Steps to reproduce:&#10;1. ...&#10;2. ...&#10;3. ..."></textarea>
+            </div>
+
+            <div class="row g-3 mb-4">
+              <div class="col-sm-6">
+                <label class="form-label" for="priority">Priority</label>
+                <select class="form-select" id="priority"></select>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label" for="severity">Severity</label>
+                <select class="form-select" id="severity"></select>
+              </div>
+            </div>
+
+            <div class="d-flex gap-2 justify-content-end">
+              <a href="tickets.html" class="btn btn-light">Cancel</a>
+              <button type="submit" class="btn btn-primary" id="submit-btn"><i class="bi bi-send me-1"></i> Submit bug</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-xl-4">
+          <div class="card-soft card-body-pad">
+            <h5 class="mb-3"><i class="bi bi-lightbulb text-warning me-2"></i>Quick guide</h5>
+            <p class="mb-2"><strong>Priority</strong> &mdash; how soon it must be fixed.</p>
+            <p class="text-muted small">Critical = fix immediately, High = this sprint, Medium = soon, Low = when there is time.</p>
+            <p class="mb-2"><strong>Severity</strong> &mdash; how badly it breaks the software.</p>
+            <p class="text-muted small mb-3">Blocker = system unusable, Major = main feature broken, Moderate = workaround exists, Minor = cosmetic.</p>
+            <div class="alert alert-light border mb-0 small">
+              <i class="bi bi-ticket-detailed me-1"></i> A unique ticket number (like <strong>BUG-1015</strong>) is created for you automatically.
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/report.js"></script>
+</body>
+</html>

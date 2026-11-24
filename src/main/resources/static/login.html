@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in - BugTracker</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="login-page">
+
+  <!-- left side: branding -->
+  <section class="login-hero">
+    <a class="brand p-0" href="login.html">
+      <span class="brand-logo"><i class="bi bi-bug-fill"></i></span>
+      <span class="brand-name">BugTracker<small>Issue &amp; ticket tracking</small></span>
+    </a>
+
+    <div>
+      <h1>Track bugs. Ship better software.</h1>
+      <p class="lead mb-4">One place for your team to report issues, assign work and follow every fix from <em>Open</em> to <em>Closed</em>.</p>
+      <div class="hero-feature"><i class="bi bi-ticket-detailed"></i> Unique ticket numbers for every bug</div>
+      <div class="hero-feature"><i class="bi bi-people"></i> Roles for Admins, Developers and Testers</div>
+      <div class="hero-feature"><i class="bi bi-bar-chart-line"></i> Live dashboard and reports</div>
+    </div>
+
+    <div class="small" style="color:#8f98cc">College project &middot; Java Spring Boot &middot; MySQL</div>
+  </section>
+
+  <!-- right side: login form -->
+  <section class="login-panel">
+    <div class="login-box">
+      <div class="mb-4">
+        <h2 class="mb-1">Welcome back</h2>
+        <p class="text-muted mb-0">Sign in to your workspace to continue.</p>
+      </div>
+
+      <div class="alert alert-danger d-none py-2" id="login-error" role="alert"></div>
+
+      <form id="login-form" novalidate>
+        <div class="mb-3">
+          <label class="form-label" for="username">Username</label>
+          <div class="input-icon">
+            <i class="bi bi-person"></i>
+            <input class="form-control" id="username" autocomplete="username" placeholder="e.g. admin" autofocus>
+          </div>
+        </div>
+        <div class="mb-4">
+          <label class="form-label" for="password">Password</label>
+          <div class="input-icon">
+            <i class="bi bi-lock"></i>
+            <input class="form-control" id="password" type="password" autocomplete="current-password" placeholder="Enter your password">
+          </div>
+        </div>
+        <button class="btn btn-primary w-100 py-2" id="login-btn" type="submit">Sign in</button>
+      </form>
+
+      <div class="demo-box mt-4">
+        <div class="small fw-bold mb-1"><i class="bi bi-info-circle me-1"></i> Demo accounts (click to fill in)</div>
+        <button type="button" class="demo-btn" data-user="admin" data-pass="admin123">
+          <span><strong>Admin</strong> &mdash; full access</span><code>admin / admin123</code>
+        </button>
+        <button type="button" class="demo-btn" data-user="dev" data-pass="dev123">
+          <span><strong>Developer</strong> &mdash; fixes bugs</span><code>dev / dev123</code>
+        </button>
+        <button type="button" class="demo-btn" data-user="tester" data-pass="tester123">
+          <span><strong>Tester</strong> &mdash; reports &amp; verifies</span><code>tester / tester123</code>
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>
